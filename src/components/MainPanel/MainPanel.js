@@ -14,8 +14,8 @@ class MainPanel extends React.Component {
   handlePercent = () => {
     this.props.dispatch(toggleActive());
   };
+
   calcAvrage = objectToDisplay => {
-    const { displayClass } = this.props.state;
     return Math.round(
       objectToDisplay.students.reduce((acc, student) => {
         acc +=
@@ -27,16 +27,14 @@ class MainPanel extends React.Component {
       }, 0) / objectToDisplay.students.length
     );
   };
+
   render() {
     const { data, displayClass } = this.props.state;
-    console.log(this.props.state);
 
     let objectToDisplay = data.filter(obj => {
-      console.log(obj.classname, displayClass);
-      return obj.classname == displayClass;
+      return obj.classname === displayClass;
     })[0];
 
-    console.log("object to display", objectToDisplay);
     return (
       <div className="mainPanel">
         <>
@@ -67,8 +65,8 @@ class MainPanel extends React.Component {
               </div>
               <div className="student-container-wrapper">
                 {objectToDisplay &&
-                  objectToDisplay.students.map(obj => {
-                    return <Card student={obj} />;
+                  objectToDisplay.students.map((obj, i) => {
+                    return <Card key={i} student={obj} />;
                   })}
               </div>
             </>
@@ -82,7 +80,6 @@ class MainPanel extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     state
   };

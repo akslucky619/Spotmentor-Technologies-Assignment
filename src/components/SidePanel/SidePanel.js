@@ -3,19 +3,19 @@ import React from "react";
 import "./SidePanel.css";
 
 import { connect } from "react-redux";
-import { changeClass, toggleActive } from "../../actions/classroomAction";
+import { changeClass } from "../../actions/classroomAction";
 
 class SidePanel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   handleClick = classname => {
     this.props.dispatch(changeClass(classname));
   };
 
   compare = (str1, str2) => {
-    return str1 == str2;
+    return str1 === str2;
   };
 
   render() {
@@ -25,17 +25,18 @@ class SidePanel extends React.Component {
         <h1 className="class-header">School: XYZ</h1>
 
         <div>
-          {data.map(clas => {
+          {data.map((classNumber, i) => {
             return (
               <p
+                key={i}
                 className={
-                  clas.classname == displayClass
+                  classNumber.classname === displayClass
                     ? "class-names-active"
                     : "class-names"
                 }
-                onClick={() => this.handleClick(clas.classname)}
+                onClick={() => this.handleClick(classNumber.classname)}
               >
-                {clas.classname}
+                {classNumber.classname}
               </p>
             );
           })}
@@ -46,7 +47,6 @@ class SidePanel extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     state
   };

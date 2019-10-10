@@ -1,12 +1,12 @@
 import React from "react";
-import Progress from "react-progressbar";
+
+import "./Card.css";
 
 const percentage = (a, b, c) => {
-  return ((a + b + c) / 3).toFixed(2);
+  return Math.round((a + b + c) / 3);
 };
 
 export default function Card(props) {
-  console.log(props);
   const { student } = props;
   return (
     <>

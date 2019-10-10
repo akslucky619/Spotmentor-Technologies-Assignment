@@ -1,0 +1,66 @@
+.student-container {
+    width: 35%;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    display: inline-block;
+  }
+  
+  .student-data {
+    position: relative;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 1px 2px 4px rgb(189, 181, 181);
+  }
+  
+  .student-name {
+    display: inline-block;
+    color: #4e4cae;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .student-marks {
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+  
+  .student-avg {
+    top: 1.2rem;
+    margin-left: 15rem;
+    color: #44b4f3;
+    font-weight: bolder;
+  }
+  
+  .student-container-wrapper {
+    margin-left: 18rem;
+    margin-top: 8rem;
+  }
+  .student-percentage {
+    color: #44b4f3;
+  }
+  
+  .progress-container {
+    width: 50%;
+    display: inline-block;
+    padding-left: 5rem;
+    padding-right: 1rem;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    height: 0.4rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .progress-class {
+    background: #4e4cae;
+    width: 50%;
+    height: 6.5px;
+    border-radius: 0.5rem;
+  }
