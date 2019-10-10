@@ -1,0 +1,24 @@
+.sidePanel {
+  background: #6868b8;
+  height: 120vh;
+}
+
+.class-names-active {
+  height: 2rem;
+  border-left: 4px solid #fff;
+  padding: 1rem 0;
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+  background: #4e4cae;
+  color: white;
+  
+}
+
+.class-names {
+  height: 2rem;
+  padding: 1rem 0;
+  padding-left: 2rem;
+  padding-top: 1.5rem;
+  color: white;
+  border-left: 4px solid transparent;
+}
