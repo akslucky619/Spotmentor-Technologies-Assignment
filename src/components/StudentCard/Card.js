@@ -2,35 +2,38 @@ import React from "react";
 
 import "./Card.css";
 
-const percentage = (a, b, c) => {
-  return Math.round((a + b + c) / 3);
+const percentage = students => {
+  let marks = students.marks;
+  let subjects = Object.keys(marks);
+  let subjectMarksAvg =
+    subjects.reduce((sum, subject) => sum + marks[subject], 0) /
+    subjects.length;
+  return Math.round(subjectMarksAvg);
 };
 
 export default function Card(props) {
-  const { student } = props;
+    const { student } = props;
+    let subjects = Object.keys(student.marks);
   return (
     <>
       <section className="student-container">
         <div className="student-data">
           <div>
             <p className="student-name">{student.name}</p>
-            <span className="student-avg">
-              {percentage(
-                student.marks.Maths,
-                student.marks.Science,
-                student.marks.English
-              )}
-              %
-            </span>
+            <span className="student-avg">{percentage(student)}%</span>
           </div>
-          <div>
-            <p className="student-marks math">Math</p>
-            <ProgressBar value={student.marks.Maths} />
-            <span className="student-percentage align1">
-              {student.marks.Maths}%
-            </span>
-          </div>
-          <div>
+              {subjects.map(subject =>{
+                  return(
+            <div>
+                <p className={`student-marks ${subject.toLowerCase()}`} >{subject}</p>
+                <ProgressBar value={student.marks[subject]} />
+                <span className="student-percentage align1">
+                {student.marks[subject]}%
+                </span>
+            </div>
+                  )
+              })}
+          {/* <div>
             <p className="student-marks science">Science</p>
             <ProgressBar value={student.marks.Science} />
 
@@ -45,7 +48,7 @@ export default function Card(props) {
             <span className="student-percentage align3">
               {student.marks.English}%
             </span>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

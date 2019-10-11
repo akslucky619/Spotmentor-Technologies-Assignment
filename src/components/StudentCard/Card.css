@@ -27,6 +27,18 @@
     display: inline-block;
     font-size: 0.9rem;
   }
+
+  .maths {
+    padding-right: 0.9rem;
+  }
+  
+  .science {
+    padding-right: 0.3rem;
+  }
+  
+  .english {
+    padding-right: 0.5rem;
+  }
   
   .student-avg {
     top: 1.2rem;

@@ -14,10 +14,6 @@ class SidePanel extends React.Component {
     this.props.dispatch(changeClass(classname));
   };
 
-  compare = (str1, str2) => {
-    return str1 === str2;
-  };
-
   render() {
     const { data, displayClass } = this.props.state;
     return (
